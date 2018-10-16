@@ -6,3 +6,9 @@ dotnet: 2.1.300
 script:
   - dotnet restore src/DoggoApp/DoggoApp.csproj
   - dotnet build src/DoggoApp/DoggoApp.csproj
+
+deploy:
+  provider: releases
+  api_key: $GITHUB_OAUTH_TOKEN
+  on:
+    tags: true
