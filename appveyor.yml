@@ -2,4 +2,4 @@ version: 1.0.0.{build}
 image: Visual Studio 2017
 
 before_build:
-	- dotnet restore src\
+	- cmd: dotnet restore src\
