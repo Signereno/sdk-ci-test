@@ -52,5 +52,8 @@ Write-Host "Committing new version"
 git add VERSION $csprojPath
 git commit -m "Release v$newVersion"
 git push origin master
-git tag v$newVersion
-git push origin v$newVersion
+
+# Create tag
+$tag = v$newVersion
+git tag $tag
+git push origin $tag
