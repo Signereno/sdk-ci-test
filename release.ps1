@@ -50,7 +50,7 @@ Write-Host "Version updated in all files"
 # Git commit version bump
 Write-Host "Committing new version"
 git add VERSION $csprojPath
-git commit -m "Release v$newVersion"
+git commit -m "Release $newVersion"
 git push origin master
 
 # Create tag
