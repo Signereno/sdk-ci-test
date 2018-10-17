@@ -30,6 +30,10 @@ elseif ($toBump -eq "minor") {
 elseif($toBump -eq "patch") {
 	$currentPatch++
 }
+else {
+	Write-Host "$toBump is not a valid part of the version number." -ForegroundColor Red
+	exit 1
+}
 
 $newVersion = "$currentMajor.$currentMinor.$currentPatch";
 
