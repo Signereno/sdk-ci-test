@@ -54,6 +54,6 @@ git commit -m "Release v$newVersion"
 git push origin master
 
 # Create tag
-$tag = v$newVersion
+$tag = "v$newVersion"
 git tag $tag
 git push origin $tag
