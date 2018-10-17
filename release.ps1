@@ -53,4 +53,4 @@ git add VERSION $csprojPath
 git commit -m "Release v$newVersion"
 git push origin master
 git tag v$newVersion
-git push origin $newVersion
+git push origin v$newVersion
