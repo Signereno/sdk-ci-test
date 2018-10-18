@@ -18,6 +18,6 @@ deploy:
     on:
       tags: true
 - provider: script
-  script: dotnet nuget push src/DoggoApp/bin/Release/DoggoApp.*ci-$TRAVIS_BUILD_NUMBER --api-key $MYGET_APIKEY --Source https://www.myget.org/F/identisign/api/v2/package 
-  on:
-    branch: master
+    script: dotnet nuget push src/DoggoApp/bin/Release/DoggoApp.*ci-$TRAVIS_BUILD_NUMBER --api-key $MYGET_APIKEY --Source https://www.myget.org/F/identisign/api/v2/package 
+    on:
+      branch: master
