@@ -46,7 +46,7 @@ $newVersion | Out-File -encoding ascii VERSION -NoNewline
 $xml = New-Object XML
 $xml.PreserveWhitespace = $true
 $xml.Load($csprojPath)
-$xml.Project.PropertyGroup.Version = $newVersion
+$xml.Project.PropertyGroup.VersionPrefix = $newVersion
 $xml.Save($csprojPath)
 
 Write-Host "Version updated in all files"
