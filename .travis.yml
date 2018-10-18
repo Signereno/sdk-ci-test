@@ -3,12 +3,17 @@ solution: DoggoApp.sln
 mono: none
 dotnet: 2.1.300
 
+install:
+  - dotnet restore src/
+  - dotnet build src/
+  
 script:
-  - dotnet restore src/DoggoApp/DoggoApp.csproj
-  - dotnet build src/DoggoApp/DoggoApp.csproj
-
+  - dotnet pack -c Release
+  - dotnet pack -c Release --version-suffix $TRAVIS_JOB_ID
+  
 deploy:
-  provider: releases
-  api_key: $GITHUB_OAUTH_TOKEN
-  on:
-    tags: true
+  - provider: releases
+    api_key: $GITHUB_OAUTH_TOKEN
+    on:
+      tags: true
+	  
