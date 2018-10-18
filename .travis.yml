@@ -4,12 +4,12 @@ mono: none
 dotnet: 2.1.300
 
 install:
-  - dotnet restore src/
-  - dotnet build src/
+  - dotnet restore src/DoggoApp/
+  - dotnet build src/DoggoApp/
   
 script:
-  - dotnet pack -c Release
-  - dotnet pack -c Release --version-suffix $TRAVIS_JOB_ID
+  - dotnet pack src/DoggoApp/ -c Release
+  - dotnet pack src/DoggoApp/ -c Release --version-suffix $TRAVIS_JOB_ID
   
 deploy:
   - provider: releases
