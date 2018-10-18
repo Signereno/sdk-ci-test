@@ -9,7 +9,7 @@ install:
   
 script:
   - dotnet pack src/DoggoApp/ -c Release
-  - dotnet pack src/DoggoApp/ -c Release --version-suffix $TRAVIS_JOB_ID
+  - dotnet pack src/DoggoApp/ -c Release --version-suffix ci-$TRAVIS_BUILD_NUMBER
   
 deploy:
   - provider: releases
