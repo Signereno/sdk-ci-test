@@ -3,6 +3,8 @@
 # Add steps that run tests, create a NuGet package, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
 
+name: 1.0.$(rev:.r)
+
 trigger:
 - master
 
@@ -15,3 +17,13 @@ variables:
 steps:
 - script: dotnet build src/ --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
+- task: NuGetCommand@2
+  inputs:
+    command: pack
+    packagesToPack: 'src/DoggoApp/DoggoApp.csproj'
+    versioningScheme: byBuildNumber
+- task: NuGetCommand@2
+  displayName: 'NuGet push'
+  inputs:
+    command: push
+    publishVstsFeed: 'TestFeed'
