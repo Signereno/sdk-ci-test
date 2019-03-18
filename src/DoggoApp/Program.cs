@@ -1,4 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Net;
+using Idfy;
+using Idfy.Identification;
+using Newtonsoft.Json;
 
 namespace DoggoApp
 {
